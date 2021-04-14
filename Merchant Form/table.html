@@ -67,7 +67,28 @@
       </head>
       <script>
         function merchantAddToTable() {
-          
+    // First check if a <tbody> tag exists, add one if not
+            if ($("#merchanttable tbody").length == 0) {
+                $("#merchanttable").append("<tbody></tbody>");
+            }
+
+            // Append product to the table
+            $("#merchanttable tbody").append("<tr>" +
+                "<td>" + $("#name").val() + "</td>" +
+                "<td>" + $("#email").val() + "</td>" +
+                "<td>" + $("#phone").val() + "</td>" +
+                "<td>" + $("#website").val() + "</td>" +
+                "<td>" + $("#contactname").val() + "</td>" +
+                "<td>" + $("#contactphone").val() + "</td>" +
+                "<td>" + $("#contactemail").val() + "</td>" +
+                "<td>" + $("#type").val() + "</td>" +
+                "<td>" + $("#category").val() + "</td>" +
+                "<td>" + $("#commissionpercentage").val() + "</td>" +
+                "<td>" + $("#activefrom").val() + "</td>" +
+                "<td>" + $("#criticalaccount").val() + "</td>" +
+                "<td>" + $("#paymentoptions").val() + "</td>" +
+                "</tr>");
+        }
     </script>
     <body>
         <div class="row">
