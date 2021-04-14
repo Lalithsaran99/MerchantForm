@@ -124,7 +124,7 @@
     </head>
     <body>
         <div class="vertical-center">
-            <form action="table.html" onclick="console.log('name: '+document.getElementById('name').value +
+            <form onclick="console.log('name: '+document.getElementById('name').value +
                                         'email: '+document.getElementById('email').value +
                                         'phone: '+document.getElementById('phone').value +
                                         'website: '+document.getElementById('website').value +
@@ -208,6 +208,31 @@
               <input type="submit" align="center" id="submit" value="submit"><br>
             </form>
           </div>
-          
+          <div class="row">
+            <div class="col-sm-6">
+                <table id="merchanttable" class="table table-bordered table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Website</th>
+                            <th>Contact Name</th>
+                            <th>Contact Phone</th>
+                            <th>Contact Email</th>
+                            <th>Notes</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>CommissionPercentage</th>
+                            <th>Active From</th>
+                            <th>Logo</th>
+                            <th>Critical Account</th>
+                            <th>Payment Options</th>
+                            </tr>
+                        </thead>
+                </table>
+            </div>
+        </div>
+    </div>
     </body>
 </html>
