@@ -40,7 +40,14 @@
           }
           
           input[type=submit]:hover {
-            background-color: #45a049;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
           }
           
           div {
@@ -116,7 +123,7 @@
     </head>
     <body>
         <div class="vertical-center">
-            <form onsubmit="console.log('name: '+document.getElementById('name').value +
+            <form onclick="console.log('name: '+document.getElementById('name').value +
                                         'email: '+document.getElementById('email').value +
                                         'phone: '+document.getElementById('phone').value +
                                         'website: '+document.getElementById('website').value +
@@ -196,9 +203,9 @@
               <input type="checkbox" id="UPI" name="UPI">
               <label for="UPI">UPI</label><br>
               <input type="checkbox" id="cardpayment" name="cardpayment">
-              <label for="cardpayment">Card payment</label>
+              <label for="cardpayment">Card payment</label><br>
 
-              <input type="submit" value="submit">
+              <input type="submit" id="submit" value="submit"><br>
             </form>
           </div>
           
