@@ -39,7 +39,7 @@
             cursor: pointer;
           }
           
-          input[type=submit] {
+          input[type=button] {
             width: 100%;
             background-color: #4CAF50;
             color: white;
@@ -124,27 +124,44 @@
     </head>
     <script>
       function merchantAddToTable() {
-  // First check if a <tbody> tag exists, add one if not
-          if ($("#merchanttable tbody").length == 0) {
-              $("#merchanttable").append("<tbody></tbody>");
-          }
+        var x=document.getElementById('merchanttable').insertRow(-1);
+        var cell1=x.insertCell(-1);
+        var cell2=x.insertCell(-2);
+        var cell3=x.insertCell(-3);
+        var cell4=x.insertCell(-4);
+        var cell5=x.insertCell(-5);
+        var cell6=x.insertCell(-6);
+        var cell7=x.insertCell(-7);
+        var cell8=x.insertCell(-8);
+        var cell9=x.insertCell(-9);
+        var cell10=x.insertCell(-10);
+        var cell11=x.insertCell(-11);
+        var cell12=x.insertCell(-12);
+        var cell13=x.insertCell(-13);
+        var cell14=x.insertCell(-14);
+        var cell15=x.insertCell(-15);
+        cell1.innerHTML=data.name;
+        cell2.innerHTML=data.email;
+      }
+      function savedata()
+      {
+        console.log('name: '+document.getElementById('name').value +
+                                        'email: '+document.getElementById('email').value +
+                                        'phone: '+document.getElementById('phone').value +
+                                        'website: '+document.getElementById('website').value +
+                                        'contactname: '+document.getElementById('contactname').value +
+                                        'contactphone: '+document.getElementById('contactphone').value +
+                                        'contactemail: '+document.getElementById('contactemail').value +
+                                        'notes: '+document.getElementById('notes').value +
+                                        'type: '+document.getElementById('type').value +
+                                        'category: '+document.getElementById('category').value +
+                                        'commissionpercentage: '+document.getElementById('commissionpercentage').value +
+                                        'activefrom: '+document.getElementById('activefrom').value +
+                                        'logo: '+document.getElementById('logo').value +
+                                        'criticalaccount: '+document.getElementById('criticalaccount').value +
+                                        'paymentoptions: '+document.getElementById('paymentoptions').value);
+      merchantAddToTable();
 
-          // Append product to the table
-          $("#merchanttable tbody").append("<tr>" +
-              "<td>" + $("#name").val() + "</td>" +
-              "<td>" + $("#email").val() + "</td>" +
-              "<td>" + $("#phone").val() + "</td>" +
-              "<td>" + $("#website").val() + "</td>" +
-              "<td>" + $("#contactname").val() + "</td>" +
-              "<td>" + $("#contactphone").val() + "</td>" +
-              "<td>" + $("#contactemail").val() + "</td>" +
-              "<td>" + $("#type").val() + "</td>" +
-              "<td>" + $("#category").val() + "</td>" +
-              "<td>" + $("#commissionpercentage").val() + "</td>" +
-              "<td>" + $("#activefrom").val() + "</td>" +
-              "<td>" + $("#criticalaccount").val() + "</td>" +
-              "<td>" + $("#paymentoptions").val() + "</td>" +
-              "</tr>");
       }
   </script>
     <body>
@@ -163,7 +180,7 @@
                                         'activefrom: '+document.getElementById('activefrom').value +
                                         'logo: '+document.getElementById('logo').value +
                                         'criticalaccount: '+document.getElementById('criticalaccount').value +
-                                        'paymentoptions: '+document.getElementById('paymentoptions').value)" method="GET">
+                                        'paymentoptions: '+document.getElementById('paymentoptions').value)">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" placeholder="Your name" required>
           
@@ -230,12 +247,12 @@
               <input type="checkbox" id="cardpayment" name="cardpayment">
               <label for="cardpayment">Card payment</label><br>
 
-              <input type="submit" align="center" id="submit" value="submit"><br>
+              <input type="button" align="center" id="submit" onclick="merchantAddToTable()"value="submit"><br>
             </form>
           </div>
           <div class="row">
             <div class="col-sm-6">
-                <table id="merchanttable" class="table table-bordered table-condensed table-striped">
+                <table id="merchanttable" border="1">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -254,7 +271,7 @@
                             <th>Critical Account</th>
                             <th>Payment Options</th>
                             </tr>
-                        </thead>
+                          </thead>
                 </table>
             </div>
         </div>
