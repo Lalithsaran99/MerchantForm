@@ -8,21 +8,10 @@ function onFormSubmit() {
         resetForm();
 }
 function imageFile(event) {
-    var img = document.getElementById("logo");
-    img.src = URL.createObjectURL(event.target.files[0]);
+    const image = event.target.files[0]
+			document.getElementById('logo').setAttribute('src', URL.createObjectURL(image))
 }
-function displayRadioValue() {
-    var ele = document.getElementsByType('input');
-      
-    for(i = 0; i < ele.length; i++) {
-          
-        if(ele[i].type="radio") {
-          
-            if(ele[i].checked)
-                return ele;
-        }
-    }
-}
+
 function radiobutton(){
     var ele = document.getElementsByTagName('input');
     var val;
