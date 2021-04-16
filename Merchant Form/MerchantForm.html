@@ -1,280 +1,114 @@
 <html>
-    <style>
-        input[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-          }
-          input[type=number], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-          }
-          textarea[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-          }
-          
-          button[type=button] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-          }
-          
-          input[type=button] {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            margin:8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            float: center;
-          }
-          
-          div {
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 20px;
-          }
-          * {box-sizing: border-box;}
+  <meta charset="windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+<head>
+    <title>Merchant Form</title>
+    <div class="header">
+    <a href="#default" class="logo">NewBusiness</a>
+      <div class="header-right">
+          <a class="active" href="#home">Home</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+</div>
+</div>
+</head>
 
-          body { 
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-          }
-
-          .header {
-            overflow: hidden;
-            background-color: #f1f1f1;
-            padding: 20px 10px;
-          }
-
-          .header a {
-            float: left;
-            color: black;
-            text-align: center;
-            padding: 12px;
-            text-decoration: none;
-            font-size: 18px; 
-            line-height: 25px;
-            border-radius: 4px;
-          }
-
-          .header a.logo {
-            font-size: 25px;
-            font-weight: bold;
-          }
-
-          .header a:hover {
-            background-color: #ddd;
-            color: black;
-          }
-
-          .header a.active {
-            background-color: dodgerblue;
-            color: white;
-          }
-
-          .header-right {
-            float: right;
-          }
-
-          @media screen and (max-width: 500px) {
-            .header a {
-              float: none;
-              display: block;
-              text-align: left;
-            }
-            
-            .header-right {
-              float: none;
-            }
-          }
-              </style>
-              <head>
-                  <title>Merchant Form</title>
-                  <div class="header">
-                  <a href="#default" class="logo">NewBusiness</a>
-                    <div class="header-right">
-                        <a class="active" href="#home">Home</a>
-                        <a href="#contact">Contact</a>
-                        <a href="#about">About</a>
-            </div>
-      </div>
-    </head>
-    <script>
-      function merchantAddToTable() {
-        var x=document.getElementById('merchanttable').insertRow(-1);
-        var cell1=x.insertCell(-1);
-        var cell2=x.insertCell(-2);
-        var cell3=x.insertCell(-3);
-        var cell4=x.insertCell(-4);
-        var cell5=x.insertCell(-5);
-        var cell6=x.insertCell(-6);
-        var cell7=x.insertCell(-7);
-        var cell8=x.insertCell(-8);
-        var cell9=x.insertCell(-9);
-        var cell10=x.insertCell(-10);
-        var cell11=x.insertCell(-11);
-        var cell12=x.insertCell(-12);
-        var cell13=x.insertCell(-13);
-        var cell14=x.insertCell(-14);
-        var cell15=x.insertCell(-15);
-        cell1.innerHTML=data.name;
-        cell2.innerHTML=data.email;
-      }
-      function savedata()
-      {
-        console.log('name: '+document.getElementById('name').value +
-                                        'email: '+document.getElementById('email').value +
-                                        'phone: '+document.getElementById('phone').value +
-                                        'website: '+document.getElementById('website').value +
-                                        'contactname: '+document.getElementById('contactname').value +
-                                        'contactphone: '+document.getElementById('contactphone').value +
-                                        'contactemail: '+document.getElementById('contactemail').value +
-                                        'notes: '+document.getElementById('notes').value +
-                                        'type: '+document.getElementById('type').value +
-                                        'category: '+document.getElementById('category').value +
-                                        'commissionpercentage: '+document.getElementById('commissionpercentage').value +
-                                        'activefrom: '+document.getElementById('activefrom').value +
-                                        'logo: '+document.getElementById('logo').value +
-                                        'criticalaccount: '+document.getElementById('criticalaccount').value +
-                                        'paymentoptions: '+document.getElementById('paymentoptions').value);
-      merchantAddToTable();
-
-      }
-  </script>
-    <body>
-        <div class="vertical-center">
-            <form onclick="console.log('name: '+document.getElementById('name').value +
-                                        'email: '+document.getElementById('email').value +
-                                        'phone: '+document.getElementById('phone').value +
-                                        'website: '+document.getElementById('website').value +
-                                        'contactname: '+document.getElementById('contactname').value +
-                                        'contactphone: '+document.getElementById('contactphone').value +
-                                        'contactemail: '+document.getElementById('contactemail').value +
-                                        'notes: '+document.getElementById('notes').value +
-                                        'type: '+document.getElementById('type').value +
-                                        'category: '+document.getElementById('category').value +
-                                        'commissionpercentage: '+document.getElementById('commissionpercentage').value +
-                                        'activefrom: '+document.getElementById('activefrom').value +
-                                        'logo: '+document.getElementById('logo').value +
-                                        'criticalaccount: '+document.getElementById('criticalaccount').value +
-                                        'paymentoptions: '+document.getElementById('paymentoptions').value)">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required>
-          
-              <label for="email">Email</label>
-              <input type="text" id="email" name="email" placeholder="Your Email" required>
+<body>
+                <form id="merchant" onsubmit="return false">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required>
               
-              <label for="phone">Phone</label>
-              <input type="text" id="phone" name="phone" placeholder="Your Phone no" max="10" required>
-              
-              <label for="website">Website</label>
-              <input type="text" id="website" name="website" placeholder="Your website" required>
+                  <label for="email">Email</label>
+                  <input type="text" id="email" name="email" placeholder="Your Email" required>
+                  
+                  <label for="phone">Phone</label>
+                  <input type="text" id="phone" name="phone" placeholder="Your Phone no" max="10" required>
+                  
+                  <label for="website">Website</label>
+                  <input type="text" id="website" name="website" placeholder="Your website" required>
+    
+                  <label for="contactname">Contact Name</label>
+                  <input type="text" id="contactname" name="contactname" placeholder="Your contactname" required>
+    
+                  <label for="contactphone">Contact Phone</label>
+                  <input type="text" id="contactphone" name="contactphone" placeholder="Your contactphone" max="10" required>
+    
+                  <label for="contactemail">Contact Email</label>
+                  <input type="text" id="contactemail" name="contactemail" placeholder="Your contactemail" required>
+    
+                  <label for="notes">Notes</label>
+                  <textarea type="text" id="notes" name="notes" placeholder="Your Notes" required>
+                  </textarea>
+    
+                  <label for="type">Type</label><br>
+                  <input type="radio" id="type" name="type" value="smallbusiness">
+                  <label for="smallbusiness">Small Business</label><br>
+                  <input type="radio" id="type" name="type" value="enterprise">
+                  <label for="enterprise">Enterprise</label><br>
+                  <input type="radio" id="type" name="type" value="entrepreneur">
+                  <label for="entrepreneur">Entrepreneur</label><br>
+    
+    
+                  <label for="category">Category</label>
+                  <select id="category" name="category" multiple>
+                    <option value="clothes" name="category">Clothes</option>
+                    <option value="toys" name="category">Toys</option>
+                    <option value="groceries" name="category">Groceries</option>
+                    <option value="electronics" name="category">Electronics</option>
+                    <option value="digital" name="category">Digital</option>
+                  </select>
+                
+                  <label for="commissionpercentage">Commission Percentage</label>
+                  <input type="number" id="commissionpercentage" name="commissionpercentage" placeholder="Your CommissionPercentage"  required>
+                  
+                  <label for="activefrom">Active From</label>
+                  <input type="date" id="activefrom" name="activefrom" required><br>
+    
+                  <label for="logo">Logo</label>
+                  <input type="file" id="logo" name="logo"  onchange="imageFile(event)" accept="image/png, image/jpeg" required><br>
+    
+                  <label for="criticalaccount">Critical Account</label><br>
+                  <input type="radio" id="criticalaccount" name="criticalaccount" value="yes">
+                  <label for="yes">Yes</label><br>
+                  <input type="radio" id="criticalaccount" name="criticalaccount" value="no">
+                  <label for="no" >No</label><br>
+    
+                  <label for="paymentoptions">Payment Options</label><br>
+                  <input type="checkbox" id="paymentoptions" name="paymentoptions" value="COD">
+                  <label for="COD">Cash on Delivery</label><br>
+                  <input type="checkbox" id="paymentoptions" name="paymentoptions" value="UPI">
+                  <label for="UPI">UPI</label><br>
+                  <input type="checkbox" id="paymentoptions" name="paymentoptions" value="CardPayment"> 
+                  <label for="cardpayment">Card payment</label><br>
+    
+                  <button onclick="onFormSubmit();">Submit</button><br>
+                </form>
+              <table id="merchantform" border="1">
+                <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Phone</th>
+                          <th>Website</th>
+                          <th>Contact Name</th>
+                          <th>Contact Phone</th>
+                          <th>Contact Email</th>
+                          <th>Notes</th>
+                          <th>Type</th>
+                          <th>Category</th>
+                          <th>CommissionPercentage</th>
+                          <th>Active From</th>
+                          <th>Logo</th>
+                          <th>Critical Account</th>
+                          <th>Payment Options</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="logo"></tr>
+                  </tbody>
+              </table>
+    <script src="script.js"></script>
+</body>
 
-              <label for="contactname">Contact Name</label>
-              <input type="text" id="contactname" name="contactname" placeholder="Your contactname" required>
-
-              <label for="contactphone">Contact Phone</label>
-              <input type="text" id="contactphone" name="contactphone" placeholder="Your contactphone" max="10" required>
-
-              <label for="contactemail">Contact Email</label>
-              <input type="text" id="contactemail" name="contactemail" placeholder="Your contactemail" required>
-
-              <label for="notes">Notes</label>
-              <textarea type="text" id="notes" name="notes" placeholder="Your Notes" required>
-              </textarea>
-
-              <label for="type">Type</label><br>
-              <input type="radio" id="smallbusiness" name="type" value="smallbusiness">
-              <label for="smallbusiness">Small Business</label><br>
-              <input type="radio" id="enterprise" name="type" value="enterprise">
-              <label for="enterprise">Enterprise</label><br>
-              <input type="radio" id="entrepreneur" name="type" value="entrepreneur">
-              <label for="smallbusiness">Entrepreneur</label><br>
-
-
-              <label for="category">Category</label>
-              <select id="category" name="category" multiple>
-                <option value="clothes">Clothes</option>
-                <option value="toys">Toys</option>
-                <option value="groceries">Groceries</option>
-                <option value="electronics">Electronics</option>
-                <option value="digital">Digital</option>
-              </select>
-            
-              <label for="commissionpercentage">Commission Percentage</label>
-              <input type="number" id="commissionpercentage" name="commissionpercentage" placeholder="Your CommissionPercentage"  required>
-              
-              <label for="activefrom">Active From</label>
-              <input type="date" id="activefrom" name="activefrom" required><br>
-
-              <label for="logo">Logo</label>
-              <input type="file" id="logo" name="logo"  accept="image/png, image/jpeg" required><br>
-
-              <label for="criticalaccount">Critical Account</label><br>
-              <input type="radio" id="yes" name="yes">
-              <label for="yes">Yes</label><br>
-              <input type="radio" id="no" name="no">
-              <label for="no" >No</label><br>
-
-              <label for="paymentoptions">Payment Options</label><br>
-              <input type="checkbox" id="COD" name="COD">
-              <label for="COD">Cash on Delivery</label><br>
-              <input type="checkbox" id="UPI" name="UPI">
-              <label for="UPI">UPI</label><br>
-              <input type="checkbox" id="cardpayment" name="cardpayment">
-              <label for="cardpayment">Card payment</label><br>
-
-              <input type="button" align="center" id="submit" onclick="merchantAddToTable()"value="submit"><br>
-            </form>
-          </div>
-          <div class="row">
-            <div class="col-sm-6">
-                <table id="merchanttable" border="1">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Website</th>
-                            <th>Contact Name</th>
-                            <th>Contact Phone</th>
-                            <th>Contact Email</th>
-                            <th>Notes</th>
-                            <th>Type</th>
-                            <th>Category</th>
-                            <th>CommissionPercentage</th>
-                            <th>Active From</th>
-                            <th>Logo</th>
-                            <th>Critical Account</th>
-                            <th>Payment Options</th>
-                            </tr>
-                          </thead>
-                </table>
-            </div>
-        </div>
-    </div>
-    </body>
 </html>
