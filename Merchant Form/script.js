@@ -1,27 +1,69 @@
 var selectedRow = null
 function onFormSubmit() {
         var formData = readFormData();
-        if (selectedRow == null)
+        if (selectedRow == null){
             insertNewRecord(formData);
-        else
+        }
+        else{
             updateRecord(formData);
+        }
         resetForm();
 }
 function imageFile(event) {
-    const image = event.target.files[0]
-			document.getElementById('logo').setAttribute('src', URL.createObjectURL(image))
-}
+        var image = document.getElementById('logo');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
 
 function radiobutton(){
-    var ele = document.getElementsByTagName('input');
+    var ele = document.getElementsByName('type');
     var val;
     for(i=0;i<ele.length;i++)
-    if(ele.type="radio"){
+    {
         if(ele[i].checked)
             val=ele[i].value;
-
     }
+    
     return val;
+}
+function selbutton(){
+    var selected = [];
+  for (var option of document.getElementById('category').options) {
+    if (option.selected) {
+      selected.push(option.value);
+    }
+  }
+    
+    return selected;
+}
+function radiobutton2(){
+    var ele = document.getElementsByName('criticalaccount');
+    var val;
+    for(i=0;i<ele.length;i++)
+    {
+        if(ele[i].checked)
+            val=ele[i].value;
+    }
+    
+    return val;
+}
+function checkboxbutton()
+{
+    var selected = new Array();
+ 
+        var payment = document.getElementsByName("paymentoptions");
+
+        var val;
+
+        for (var i = 0; i < payment.length; i++) {
+            if (payment[i].checked) {
+                selected.push(payment[i].value);
+            }
+        }
+        if(selected.length>0)
+        {
+            val=selected.join(",");
+        }
+        return val;
 }
 function readFormData() {
     var formData = {};
@@ -34,16 +76,22 @@ function readFormData() {
     formData["contactphone"] = document.getElementById("contactphone").value;
     formData["notes"] = document.getElementById("notes").value;
     formData["type"] = radiobutton();
-    formData["category"] = document.getElementsByName("category").value;
+    formData["category"] = selbutton();
     formData["commissionpercentage"] = document.getElementById("commissionpercentage").value;
     formData["activefrom"] = document.getElementById("activefrom").value;
-    formData["logo"] = document.getElementById("logo").value;
-    formData["crtitcalaccount"] = radiobutton();
-    formData["paymentoptions"] = document.getElementsByName("paymentoptions").value;
+    formData["logo"] = document.getElementById("logo").URL;
+    formData["criticalaccount"] = radiobutton2();
+    formData["paymentoptions"] = checkboxbutton();
     return formData;
 }
 
 function insertNewRecord(data) {
+    var tab = document.getElementById("merchantform");
+
+    localStorage.setItem("merchantform",JSON.stringify(data));
+
+    var retrievedData = JSON.parse(localStorage.getItem("merchantform"));
+    
     var table = document.getElementById("merchantform").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
     var cell1 = newRow.insertCell(0);
@@ -73,9 +121,9 @@ function insertNewRecord(data) {
     var cell13 = newRow.insertCell(12);
     cell13.innerHTML = data.logo;
     var cell14 = newRow.insertCell(13);
-    cell14.innerHTML = data.criticalAccount;
+    cell14.innerHTML = data.criticalaccount;
     var cell15 = newRow.insertCell(14);
-    cell15.innerHTML = data.paymentoption;
+    cell15.innerHTML = data.paymentoptions;
     cell15 = newRow.insertCell(15);
     cell15.innerHTML = `<a onClick="onEdit(this)">Edit</a>
                         <a onClick="onDelete(this)">Delete</a>`;
@@ -94,7 +142,7 @@ function resetForm() {
     document.getElementsByName("category").value = "";
     document.getElementById("commissionpercentage").value = "";
     document.getElementById("activefrom").value = "";
-    document.getElementById("logo").value = "";
+    document.getElementById("logo").URL = "";
     document.getElementsByName("criticalaccount").value = "";
     document.getElementsByName("paymentoptions").value = "";
     selectedRow = null;
@@ -114,7 +162,7 @@ function onEdit(td) {
     document.getElementsByName("category").value = selectedRow.cells[9].innerHTML;
     document.getElementById("commissionpercentage").value = selectedRow.cells[10].innerHTML;
     document.getElementById("activefrom").value = selectedRow.cells[11].innerHTML;
-    document.getElementById("logo").value = selectedRow.cells[12].innerHTML;
+    document.getElementById("logo").URL = selectedRow.cells[12].innerHTML;
     document.getElementsByName("criticalaccount").value = selectedRow.cells[13].innerHTML;
     document.getElementsByName("paymentoptions").value = selectedRow.cells[14].innerHTML;
 }
@@ -132,7 +180,7 @@ function updateRecord(formData) {
     selectedRow.cells[10].innerHTML = formData.commissionpercentage;
     selectedRow.cells[11].innerHTML = formData.activefrom;
     selectedRow.cells[12].innerHTML = formData.logo;
-    selectedRow.cells[13].innerHTML = formData.criticalAccount;
+    selectedRow.cells[13].innerHTML = formData.criticalaccount;
     selectedRow.cells[14].innerHTML = formData.paymentoptions;
 }
 

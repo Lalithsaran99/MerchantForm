@@ -15,7 +15,7 @@
 </head>
 
 <body>
-                <form id="merchant" onsubmit="return false">
+                <form id="merchant" onsubmit="event.preventDefault();onFormSubmit();">
                   <label for="name">Name</label>
                   <input type="text" id="name" name="name" placeholder="Your name" required>
               
@@ -52,11 +52,11 @@
     
                   <label for="category">Category</label>
                   <select id="category" name="category" multiple>
-                    <option value="clothes" name="category">Clothes</option>
-                    <option value="toys" name="category">Toys</option>
-                    <option value="groceries" name="category">Groceries</option>
-                    <option value="electronics" name="category">Electronics</option>
-                    <option value="digital" name="category">Digital</option>
+                    <option value="clothes">Clothes</option>
+                    <option value="toys" >Toys</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="digital">Digital</option>
                   </select>
                 
                   <label for="commissionpercentage">Commission Percentage</label>
@@ -82,7 +82,7 @@
                   <input type="checkbox" id="paymentoptions" name="paymentoptions" value="CardPayment"> 
                   <label for="cardpayment">Card payment</label><br>
     
-                  <button onclick="onFormSubmit();">Submit</button><br>
+                  <input type="submit" value="Submit"><br>
                 </form>
               <table id="merchantform" border="1">
                 <thead>
@@ -105,7 +105,8 @@
                       </tr>
                   </thead>
                   <tbody>
-                    <tr id="logo"></tr>
+
+                      <img id="logo" src="">
                   </tbody>
               </table>
     <script src="script.js"></script>
